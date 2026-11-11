@@ -1,0 +1,155 @@
+{
+  "status": "concluido",
+  "inicio_utc": "2026-09-28T16:10:52.947175+00:00",
+  "csv": "A:\\Codigo\\UNIPLU-BR\\1.Evaluation_basin\\resultados\\basin_86500000_2409_154543\\series\\chuva_basin_86500000_test.csv",
+  "yaml_origem": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\config.yaml",
+  "periodo": {
+    "inicio": "1980-01-01",
+    "fim": "2024-12-31"
+  },
+  "id_bacia": "86500000",
+  "instante_execucao": "2026-09-28T13:10:52.943295-03:00",
+  "diretorio_execucao": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052",
+  "evaluation_stations": "all",
+  "n_support_stations": null,
+  "ambiente": {
+    "python": "3.13.7",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "PyYAML": "6.0.3",
+    "plotly": "6.6.0"
+  },
+  "eventos": [
+    {
+      "codigo": "inicio",
+      "nivel": "info",
+      "mensagem": "Auditoria iniciada; o CSV bruto não será modificado.",
+      "detalhes": {
+        "saidas_existentes": []
+      }
+    },
+    {
+      "codigo": "datas_validas",
+      "nivel": "info",
+      "mensagem": "16437 datas válidas e sem duplicatas no CSV.",
+      "detalhes": null
+    },
+    {
+      "codigo": "ausencias_originais",
+      "nivel": "info",
+      "mensagem": "Marcadores de ausência contabilizados por estação (arquivo inteiro).",
+      "detalhes": {
+        "2751007": 307,
+        "2751017": 501,
+        "2851003": 230,
+        "2851005": 4383,
+        "2851020": 929,
+        "2851021": 202,
+        "2851022": 232,
+        "2851024": 211,
+        "2851028": 1222,
+        "2851043": 212,
+        "2851044": 3295,
+        "2852004": 713,
+        "2852014": 1188,
+        "2852016": 4383,
+        "2852031": 1228,
+        "2852046": 290,
+        "2951010": 1131,
+        "2951070": 3315,
+        "83914": 1210
+      }
+    },
+    {
+      "codigo": "leitura_concluida",
+      "nivel": "info",
+      "mensagem": "CSV carregado: 16437 dias e 19 estações.",
+      "detalhes": null
+    },
+    {
+      "codigo": "estacoes_alvo",
+      "nivel": "info",
+      "mensagem": "19 estação(ões)-alvo selecionada(s).",
+      "detalhes": {
+        "alvos": [
+          "2751007",
+          "2751017",
+          "2851003",
+          "2851005",
+          "2851020",
+          "2851021",
+          "2851022",
+          "2851024",
+          "2851028",
+          "2851043",
+          "2851044",
+          "2852004",
+          "2852014",
+          "2852016",
+          "2852031",
+          "2852046",
+          "2951010",
+          "2951070",
+          "83914"
+        ],
+        "universo_de_estacoes": [
+          "2751007",
+          "2751017",
+          "2851003",
+          "2851005",
+          "2851020",
+          "2851021",
+          "2851022",
+          "2851024",
+          "2851028",
+          "2851043",
+          "2851044",
+          "2852004",
+          "2852014",
+          "2852016",
+          "2852031",
+          "2852046",
+          "2951010",
+          "2951070",
+          "83914"
+        ]
+      }
+    },
+    {
+      "codigo": "calendario_completo",
+      "nivel": "info",
+      "mensagem": "Nenhuma data ausente no calendário diário solicitado.",
+      "detalhes": null
+    },
+    {
+      "codigo": "correlacoes",
+      "nivel": "info",
+      "mensagem": "171 par(es) distintos analisados; diagonal fixada em 1 por convenção.",
+      "detalhes": null
+    },
+    {
+      "codigo": "conclusao",
+      "nivel": "info",
+      "mensagem": "Etapa 1 concluída; tabelas, gráficos e auditoria exportados.",
+      "detalhes": null
+    }
+  ],
+  "sha256_csv": "b0201ececd9b422c6da0565c157ddcc4aa253fbc3c846e9ef9728898854b2428",
+  "fim_utc": "2026-09-28T16:10:54.685857+00:00",
+  "arquivos": {
+    "mensal": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\precipitacao_mensal.csv",
+    "disponibilidade": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\disponibilidade_estacoes.csv",
+    "correlacao": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\matriz_correlacao.csv",
+    "r2": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\matriz_r2.csv",
+    "meses_coincidentes": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\matriz_meses_coincidentes.csv",
+    "estacoes_apoio": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\estacoes_apoio.csv",
+    "series_html": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\series_mensais_interativas.html",
+    "correlacao_html": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\heatmap_correlacao.html",
+    "r2_html": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\heatmap_r2.html",
+    "meses_html": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\heatmap_meses_coincidentes.html",
+    "diagnostico_pares": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\diagnostico_pares.csv",
+    "auditoria": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\auditoria_execucao.json",
+    "log": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\execucao.log",
+    "configuracao": "A:\\Codigo\\UNIPLU-BR\\2. Analise_basin\\resultados_consistencia\\basin_86500000_2809_131052\\config_utilizada.yaml"
+  }
+}

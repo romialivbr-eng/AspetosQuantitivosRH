@@ -1,0 +1,66 @@
+projeto:
+  nome: Análise pluviométrica
+evaluation_stations: all
+n_support_stations: null
+entrada:
+  arquivo_csv: A:\Codigo\UNIPLU-BR\1.Evaluation_basin\resultados\basin_86500000_2409_154543\series\chuva_basin_86500000_test.csv
+  coluna_data: datetime
+  separador: ;
+  decimal: .
+  encoding: utf-8-sig
+  formato_data: '%Y-%m-%d'
+  estacoes: null
+  valores_ausentes:
+  - ''
+  - NaN
+  - nan
+  - NA
+  - N/A
+  - 'null'
+  - None
+periodo:
+  inicio: '1980-01-01'
+  fim: '2024-12-31'
+validacao:
+  acao_valores_invalidos: interromper
+  precipitacao_minima_mm: 0.0
+  precipitacao_maxima_mm: null
+  meses_completos_alerta: 120
+selecao_apoio:
+  correlacao_minima: 0.8
+  meses_coincidentes_minimos: 120
+visualizacao:
+  exibir_no_notebook: true
+  template: plotly_white
+  altura_series: 620
+  altura_heatmap: 760
+  mostrar_valores_ate_n_estacoes: 20
+  casas_decimais: 3
+  escala_correlacao: RdBu
+  escala_r2: Viridis
+  escala_meses: Blues
+  scroll_zoom: true
+saida:
+  diretorio: A:\Codigo\UNIPLU-BR\2. Analise_basin\resultados_consistencia
+  fuso_horario: America/Sao_Paulo
+  id_bacia: null
+  sobrescrever: true
+  separador_csv: ;
+  decimal_csv: .
+  encoding_csv: utf-8-sig
+  representacao_nan: NaN
+arquivos:
+  mensal: precipitacao_mensal.csv
+  disponibilidade: disponibilidade_estacoes.csv
+  correlacao: matriz_correlacao.csv
+  r2: matriz_r2.csv
+  meses_coincidentes: matriz_meses_coincidentes.csv
+  estacoes_apoio: estacoes_apoio.csv
+  series_html: series_mensais_interativas.html
+  correlacao_html: heatmap_correlacao.html
+  r2_html: heatmap_r2.html
+  meses_html: heatmap_meses_coincidentes.html
+  diagnostico_pares: diagnostico_pares.csv
+  auditoria: auditoria_execucao.json
+  log: execucao.log
+  configuracao: config_utilizada.yaml

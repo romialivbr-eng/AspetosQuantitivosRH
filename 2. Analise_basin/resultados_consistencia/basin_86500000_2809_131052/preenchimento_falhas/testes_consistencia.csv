@@ -1,0 +1,13 @@
+﻿teste;nome;resultado;detalhe
+1;Nenhum valor originalmente observado foi modificado;OK;
+2;Nenhum valor de bloco > 6 meses foi preenchido;OK;
+3;Nenhum valor estimado foi reutilizado como apoio;OK;
+4;Regressão respeitou a ordem crescente do ranking;OK;
+5;Ranking inferior só foi usado após anteriores inválidos/indisponíveis;OK;
+6;Ponderação utilizou pelo menos 3 estações;OK;
+7;Médias da ponderação usam exatamente as mesmas datas;OK;
+8;Regressão e ponderação começaram dos mesmos dados originais;OK;
+9;Falhas em blocos acima do limite continuam NaN;OK;
+10;Todo apoio possuía observação original na data preenchida;OK;
+11;Todos os valores preenchidos são finitos;OK;
+12;Não existem valores negativos nos resultados finais;OK;

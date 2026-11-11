@@ -1,0 +1,63 @@
+projeto:
+  nome: "analise_dupla_massa"
+
+dupla_massa:
+  enabled: true
+
+  arquivo_entrada: "A:/Codigo/UNIPLU-BR/2. Analise_basin/resultados_consistencia/basin_86500000_2809_131052/preenchimento_falhas/precipitacao_mensal_regressao_linear.csv"
+  arquivo_estacoes_apoio: "A:/Codigo/UNIPLU-BR/2. Analise_basin/resultados_consistencia/basin_86500000_2809_131052/estacoes_apoio.csv"
+  diretorio_saida: "A:/Codigo/UNIPLU-BR/2. Analise_basin/resultados_consistencia/basin_86500000_2809_131052/dupla_massa"
+
+  dados:
+    separador: ";"
+    decimal: "."
+    encoding: "utf-8-sig"
+    coluna_data: "data"
+    formato_data: "%Y-%m"
+    representacao_nan: "NaN"
+
+  max_estacoes_apoio: 3
+  min_estacoes_apoio: 1
+
+  criterio_selecao_apoio: "maior_quantidade_dados"
+  desempate_por_ranking: true
+  desempate_por_correlacao: true
+
+  exigir_periodo_comum: true
+  min_meses_periodo_comum: 12
+
+  regional:
+    metodo: "media_aritmetica"
+
+  regressao:
+    usar_intercepto: true
+
+  grafico:
+    biblioteca: "plotly"
+    dropdown_estacoes: true
+    mostrar_pontos: true
+    mostrar_linha_dupla_massa: true
+    mostrar_reta_regressao: true
+    mostrar_data_hover: true
+
+    # Linha adicional opcional, distinta da regressão:
+    # passa por (0,0) com inclinação = acumulado_alvo_final / acumulado_regional_final.
+    mostrar_linha_referencia_origem: false
+
+    salvar_individuais_html: true
+    exibir_interativo_no_notebook: true
+    altura: 720
+
+  casas_decimais_equacao: 4
+
+  validacao:
+    nao_permitir_apoio_igual_alvo: true
+    exigir_precipitacao_nao_negativa: true
+
+  saida:
+    resumo: "resumo_dupla_massa.csv"
+    dados_detalhados: "dados_dupla_massa.csv"
+    testes: "testes_dupla_massa.csv"
+    interativo_html: "dupla_massa_interativo.html"
+    pasta_graficos_individuais: "graficos_dupla_massa"
+    config_utilizada: "config_dupla_massa_utilizada.yml"

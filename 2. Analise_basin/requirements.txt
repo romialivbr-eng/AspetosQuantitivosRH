@@ -1,0 +1,14 @@
+# Python 3.11 ou superior. Versões numéricas usadas na validação desta entrega.
+pandas==2.2.3
+numpy==2.3.5
+PyYAML==6.0.3
+tzdata>=2024.1  # Base de fusos para zoneinfo, inclusive no Windows.
+plotly==7.1.0
+
+# Interface e kernel para abrir/executar o notebook.
+jupyterlab>=4,<5
+ipykernel>=6,<8
+
+# Validação do formato do notebook e testes opcionais via kernel.
+nbformat>=5.10,<6
+nbclient>=0.10,<1

@@ -1,0 +1,86 @@
+# Etapa 1 — todos os parâmetros de cada aplicação ficam neste arquivo.
+# Caminhos relativos são resolvidos em relação à pasta DESTE YAML.
+# No Windows, mantenha caminhos com barras invertidas entre ASPAS SIMPLES.
+projeto:
+  nome: "Análise pluviométrica"
+
+# Seleciona APENAS os alvos; outras estações carregadas continuam como possíveis apoios.
+evaluation_stations: all
+# Alternativa (códigos sempre entre aspas):
+# evaluation_stations:
+#   - "86510000"
+#   - "86520000"
+#   - "86530000"
+
+# null preserva todos os apoios elegíveis, como antes.
+# Use 4 para selecionar ATÉ quatro por alvo, sem relaxar r mínimo ou meses mínimos.
+n_support_stations: null
+
+entrada:
+  arquivo_csv: 'A:\Codigo\UNIPLU-BR\1.Evaluation_basin\resultados\basin_86500000_2409_154543\series\chuva_basin_86500000_test.csv'
+  coluna_data: "datetime"
+  separador: ";"                    # Use ";" se necessário.
+  decimal: "."                      # Use "," se necessário.
+  encoding: "utf-8-sig"             # Alternativa frequente: "latin-1".
+  formato_data: "%Y-%m-%d"          # Ex.: "%d/%m/%Y" ou "%Y-%m-%d %H:%M:%S".
+  estacoes: null                    # Universo de alvos E apoios; null = todas exceto data.
+  # Para avaliar apenas alguns ALVOS, use evaluation_stations acima, não este filtro.
+  # Para escolher: estacoes: ["00123456", "87654321"]
+  # Códigos de estação entre aspas preservam zeros à esquerda.
+  valores_ausentes: ["", "NaN", "nan", "NA", "N/A", "null", "None"]
+  # Inclua "-9999" aqui APENAS se esse for um código de falha da sua fonte.
+
+periodo:
+  inicio: "1980-01-01"
+  fim: "2024-12-31"                  # Inclusivo. Datas sem horário/fuso.
+
+validacao:
+  # Datas inválidas, horários diferentes de 00:00 e duplicatas sempre interrompem.
+  acao_valores_invalidos: "interromper"  # Alternativa explícita: "marcar_nan".
+  precipitacao_minima_mm: 0.0        # Zero é observado válido.
+  precipitacao_maxima_mm: null      # Sem limite superior por padrão.
+  meses_completos_alerta: 120       # Apenas alerta individual; não seleciona apoio.
+
+selecao_apoio:
+  correlacao_minima: 0.80           # Usa r, nunca |r| nem R² como substituto.
+  meses_coincidentes_minimos: 120   # Inteiro >= 2; aceita o limite inclusive.
+
+visualizacao:
+  exibir_no_notebook: true
+  template: "plotly_white"
+  altura_series: 620
+  altura_heatmap: 760
+  mostrar_valores_ate_n_estacoes: 20
+  casas_decimais: 3
+  escala_correlacao: "RdBu"
+  escala_r2: "Viridis"
+  escala_meses: "Blues"
+  scroll_zoom: true
+
+saida:
+  diretorio: "./resultados_consistencia"  # Pasta-BASE das novas execuções.
+  # Nova subpasta automática: basin_<ID>_<DDMM>_<HHMMSS> (hora ATUAL neste fuso).
+  fuso_horario: "America/Sao_Paulo"
+  id_bacia: null                   # Automático pelo caminho; opção manual: "86500000".
+  # Mesmo segundo/nome já existente: sufixos _02, _03... preservam todas as execuções.
+  sobrescrever: true               # Reexportação dentro da execução; nunca reutiliza pasta antiga.
+  separador_csv: ";"               # Conveniente para Excel em português.
+  decimal_csv: "."
+  encoding_csv: "utf-8-sig"
+  representacao_nan: "NaN"         # Mantém ausência explícita nos CSVs.
+
+arquivos:
+  mensal: "precipitacao_mensal.csv"
+  disponibilidade: "disponibilidade_estacoes.csv"
+  correlacao: "matriz_correlacao.csv"
+  r2: "matriz_r2.csv"
+  meses_coincidentes: "matriz_meses_coincidentes.csv"
+  estacoes_apoio: "estacoes_apoio.csv"
+  series_html: "series_mensais_interativas.html"
+  correlacao_html: "heatmap_correlacao.html"
+  r2_html: "heatmap_r2.html"
+  meses_html: "heatmap_meses_coincidentes.html"
+  diagnostico_pares: "diagnostico_pares.csv"
+  auditoria: "auditoria_execucao.json"
+  log: "execucao.log"
+  configuracao: "config_utilizada.yaml"

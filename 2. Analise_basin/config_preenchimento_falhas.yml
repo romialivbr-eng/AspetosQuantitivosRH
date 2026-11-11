@@ -1,0 +1,51 @@
+projeto:
+  nome: "preenchimento_precipitacao_mensal"
+
+paths:
+  precipitacao_mensal: "A:/Codigo/UNIPLU-BR/2. Analise_basin/resultados_consistencia/basin_86500000_2809_131052/precipitacao_mensal.csv"
+  estacoes_apoio: "A:/Codigo/UNIPLU-BR/2. Analise_basin/resultados_consistencia/basin_86500000_2809_131052/estacoes_apoio.csv"
+  output_dir: "A:/Codigo/UNIPLU-BR/2. Analise_basin/resultados_consistencia/basin_86500000_2809_131052/preenchimento_falhas"
+
+dados:
+  separador: ";"
+  decimal: "."
+  encoding: "utf-8-sig"
+  coluna_data: "data"
+  formato_data: "%Y-%m"
+  frequencia: "MS"
+  representacao_nan: "NaN"
+
+falhas:
+  max_meses_consecutivos: 6
+
+regressao_linear:
+  enabled: true
+  min_observacoes_coincidentes: 12
+  usar_intercepto: true
+  tratamento_valor_negativo: "zero"   # opções: zero | nan
+
+ponderacao_regional:
+  enabled: true
+  min_estacoes_apoio: 3
+  min_meses_periodo_comum: 12
+  usar_todas_estacoes_disponiveis: true
+  exigir_periodo_comum: true
+
+controle:
+  usar_somente_dados_originais: true
+  permitir_preenchido_como_apoio: false
+  sobrescrever_originais: false
+  interromper_em_datas_ausentes: true
+  interromper_em_valores_negativos_originais: true
+  interromper_em_estacoes_inexistentes: true
+  interromper_em_rankings_invalidos: true
+
+saida:
+  precipitacao_regressao: "precipitacao_mensal_regressao_linear.csv"
+  precipitacao_ponderacao: "precipitacao_mensal_ponderacao_regional.csv"
+  diagnostico_regressao: "diagnostico_regressao_linear.csv"
+  diagnostico_ponderacao: "diagnostico_ponderacao_regional.csv"
+  comparacao_metodos: "comparacao_metodos.csv"
+  resumo: "resumo_preenchimento.csv"
+  testes: "testes_consistencia.csv"
+  config_utilizada: "config_preenchimento_falhas_utilizada.yml"

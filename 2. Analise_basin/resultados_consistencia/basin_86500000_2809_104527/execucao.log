@@ -1,0 +1,8 @@
+INFO | Auditoria iniciada; o CSV bruto não será modificado.
+INFO | 16437 datas válidas e sem duplicatas no CSV.
+INFO | Marcadores de ausência contabilizados por estação (arquivo inteiro).
+INFO | CSV carregado: 16437 dias e 19 estações.
+INFO | 19 estação(ões)-alvo selecionada(s).
+INFO | Nenhuma data ausente no calendário diário solicitado.
+INFO | 171 par(es) distintos analisados; diagonal fixada em 1 por convenção.
+INFO | Etapa 1 concluída; tabelas, gráficos e auditoria exportados.
